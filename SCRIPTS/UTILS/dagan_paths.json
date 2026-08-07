@@ -1,0 +1,11 @@
+{
+    "status" : "/data/warehouse/process/src/etl_wx/status/",
+    "bulletins" : "/data/warehouse/etl/weather/obs/current/",
+    
+    "usa_dirs" : ["saus70", "sauc80"],
+    "usa_subdir" : "kwbc",
+
+    "can_dir" : "swob-ml",
+    "can_subdir" : "c***"
+
+}
