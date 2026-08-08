@@ -27,5 +27,11 @@ from context import download_dir
 query = cldn_query()
 print(query)
 
-db_query(query, csv_output=f"{download_dir}/lightning_data.csv")
+file_name = f"{download_dir}/lightning_data.csv"
+
+db_query(query, csv_output=file_name)
+
+# open the csv and remove headers for a final save
+df = pd.read_csv(file_name)
+df.to_csv(file_name, index=False, header=False)
 # %%

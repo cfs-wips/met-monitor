@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="en" data-content_root="./">
@@ -5,101 +7,397 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>met-monitor documentation &#8212; met-monitor 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
-    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <title>Weather Stream Monitoring &#8212; met-monitor 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/cloud.css?v=f9ae72be" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
     <script src="_static/documentation_options.js?v=2709fde1"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-
-  
-  
-
+    <link rel="search" title="Search" href="search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+    <li><a href="#">met-monitor 0.1 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Weather Stream Monitoring</a></li> 
+      </ul>
+    </div>
+    </div>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
-  <section id="met-monitor-documentation">
-<h1>met-monitor documentation<a class="headerlink" href="#met-monitor-documentation" title="Link to this heading">¶</a></h1>
-<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
-documentation for details.</p>
+  <section id="weather-stream-monitoring">
+<h1>Weather Stream Monitoring<a class="headerlink" href="#weather-stream-monitoring" title="Link to this heading">¶</a></h1>
+<section id="status-files">
+<h2>Status Files<a class="headerlink" href="#status-files" title="Link to this heading">¶</a></h2>
+<p>7 days worth of status files for the Canadian, US, Mexico, and Eurasian feeds. Additionally, upper air station data.
+Percentages are color coded to indicate the status.</p>
+<style>
+    .disclaimer {
+        background: #e9f2ff;
+        padding: 10px 12px;
+        border-left: 4px solid #7ca8e1;
+        border-radius: 5px;
+        margin: 0 0 6px;
+        font-size: 15px;
+        line-height: 1.35;
+    }
+</style>
+
+<div class="disclaimer">
+    <strong>Red - Requires re-run: <80% for Canada and USA hourlies. XX for Mexico and Eurasia.</strong><br>
+</div>
+
+<div class="disclaimer">
+     <strong>Yellow - Only used for Canada: near 80% indicating Alberta Agriculture stations likely need to be re-run.</strong><br>
+</div>
+
+<div class="disclaimer">
+      <strong>Green - Running well: >80% for Canada and USA hourlies. Any percentage for Mexico and Eurasia.</strong><br>
+</div><table class="docutils align-center" id="id1">
+<caption><span class="caption-text">Canada Hourly Status</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>can_hly1.2.4     1061 000102030405060708091011121314151617181920212223</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>20260807          8081798181788180818181818182818181818081808181XX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260806          818080808178817977818181818180818180818081808180</p></td>
+</tr>
+<tr class="row-even"><td><p>20260805          808180818078808080808080818081818081818180818180</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260804          808078807978807980808081808181818081808080808181</p></td>
+</tr>
+<tr class="row-even"><td><p>20260803          807979787980808080808080808181818081818080818080</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260802          807980818080707080707080818181808080808080798079</p></td>
+</tr>
+<tr class="row-even"><td><p>20260801          808181807880808080808080808181818080808180818181</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260731          818181808080807980818080818081808180818081818180</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-center" id="id2">
+<caption><span class="caption-text">Canada SYNHD Status</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>can_syndh1.2.4      907 000102030405060708091011121314151617181920212223</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>20260807          76XXXXXXXXXX77XXXXXXXXXX77XXXXXXXXXX76XXXXXXXXXX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260806          77XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX76XXXXXXXXXX</p></td>
+</tr>
+<tr class="row-even"><td><p>20260805          76XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260804          77XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX76XXXXXXXXXX</p></td>
+</tr>
+<tr class="row-even"><td><p>20260803          75XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260802          77XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX</p></td>
+</tr>
+<tr class="row-even"><td><p>20260801          77XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260731          77XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX77XXXXXXXXXX</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lightning-feed">
+<h2>Lightning Feed<a class="headerlink" href="#lightning-feed" title="Link to this heading">¶</a></h2>
+<p>Below are the most recent lightning strike times and locations pulled every 15 minutes from the CLDN feed.</p>
+<table class="docutils align-center" id="id3">
+<caption><span class="caption-text">Lightning Data (built at 2026-08-07 18:08:41)</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 27.3%" />
+<col style="width: 18.2%" />
+<col style="width: 18.2%" />
+<col style="width: 18.2%" />
+<col style="width: 18.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Datetime</p></th>
+<th class="head"><p>Lat</p></th>
+<th class="head"><p>Lon</p></th>
+<th class="head"><p>Peak Current</p></th>
+<th class="head"><p>Multi Flash</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2026-08-07 23:33:42</p></td>
+<td><p>41.1155</p></td>
+<td><p>-73.1878</p></td>
+<td><p>-15</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:42</p></td>
+<td><p>39.2829</p></td>
+<td><p>-84.4627</p></td>
+<td><p>17</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:41</p></td>
+<td><p>41.9608</p></td>
+<td><p>-91.5571</p></td>
+<td><p>-7</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:41</p></td>
+<td><p>39.2149</p></td>
+<td><p>-76.4118</p></td>
+<td><p>-19</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:41</p></td>
+<td><p>41.3612</p></td>
+<td><p>-73.2762</p></td>
+<td><p>-45</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:41</p></td>
+<td><p>42.4987</p></td>
+<td><p>-89.4653</p></td>
+<td><p>-4</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:41</p></td>
+<td><p>40.569</p></td>
+<td><p>-73.5789</p></td>
+<td><p>-15</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:40</p></td>
+<td><p>47.5544</p></td>
+<td><p>-88.1921</p></td>
+<td><p>-7</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:40</p></td>
+<td><p>41.2733</p></td>
+<td><p>-73.2527</p></td>
+<td><p>-9</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:39</p></td>
+<td><p>36.7948</p></td>
+<td><p>-79.0696</p></td>
+<td><p>-21</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:39</p></td>
+<td><p>55.7154</p></td>
+<td><p>-121.4029</p></td>
+<td><p>30</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:39</p></td>
+<td><p>55.7668</p></td>
+<td><p>-121.563</p></td>
+<td><p>43</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:39</p></td>
+<td><p>40.5563</p></td>
+<td><p>-85.4804</p></td>
+<td><p>9</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:38</p></td>
+<td><p>40.6395</p></td>
+<td><p>-77.9939</p></td>
+<td><p>-10</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:36</p></td>
+<td><p>41.3312</p></td>
+<td><p>-73.2431</p></td>
+<td><p>-16</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:36</p></td>
+<td><p>38.8438</p></td>
+<td><p>-81.3326</p></td>
+<td><p>-13</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:36</p></td>
+<td><p>41.6971</p></td>
+<td><p>-92.3526</p></td>
+<td><p>-11</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:35</p></td>
+<td><p>39.2819</p></td>
+<td><p>-81.4137</p></td>
+<td><p>-6</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:35</p></td>
+<td><p>37.8702</p></td>
+<td><p>-77.2069</p></td>
+<td><p>-4</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:35</p></td>
+<td><p>41.4315</p></td>
+<td><p>-73.3015</p></td>
+<td><p>-24</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:35</p></td>
+<td><p>35.8224</p></td>
+<td><p>-86.7434</p></td>
+<td><p>-17</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:32</p></td>
+<td><p>38.9736</p></td>
+<td><p>-81.263</p></td>
+<td><p>-21</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:32</p></td>
+<td><p>47.7123</p></td>
+<td><p>-87.5977</p></td>
+<td><p>15</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-07 23:33:32</p></td>
+<td><p>41.8304</p></td>
+<td><p>-90.8387</p></td>
+<td><p>-23</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-07 23:33:32</p></td>
+<td><p>35.1604</p></td>
+<td><p>-87.4392</p></td>
+<td><p>-25</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="scribe">
+<h2>Scribe<a class="headerlink" href="#scribe" title="Link to this heading">¶</a></h2>
+<p>Environment and Climate Change Canada Scribe data.</p>
+</section>
+<section id="naefs">
+<h2>NAEFS<a class="headerlink" href="#naefs" title="Link to this heading">¶</a></h2>
+<p>North American Ensemble Forecast System data.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">met-monitor</a></h1>
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="#">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Weather Stream Monitoring</a><ul>
+<li><a class="reference internal" href="#status-files">Status Files</a></li>
+<li><a class="reference internal" href="#lightning-feed">Lightning Feed</a></li>
+<li><a class="reference internal" href="#scribe">Scribe</a></li>
+<li><a class="reference internal" href="#naefs">NAEFS</a></li>
+</ul>
+</li>
+</ul>
 
-
-
-
-
-
-
-
-
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </search>
-<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-
-
-
-
-
-
-
-
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &#169;2026, BuchartL.
-      
-      |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
-      
-      |
-      <a href="_sources/index.rst.txt"
-          rel="nofollow">Page source</a>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+    <li><a href="#">met-monitor 0.1 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Weather Stream Monitoring</a></li> 
+      </ul>
+    </div>
     </div>
 
-    
-
-    
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2026, BuchartL.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
   </body>
 </html>
