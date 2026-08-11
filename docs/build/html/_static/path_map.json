@@ -1,0 +1,6 @@
+{
+  "templates": {
+    "can_hly": "data/can_hly/{date}/{column}/{value}.txt",
+    "default": "data/{date}/{column}/{value}.txt"
+  }
+}

@@ -10,11 +10,13 @@
     <title>Weather Stream Monitoring &#8212; met-monitor 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/cloud.css?v=f9ae72be" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
     
     <script src="_static/documentation_options.js?v=2709fde1"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
 
     
     
@@ -63,16 +65,542 @@
 <h2>Status Files<a class="headerlink" href="#status-files" title="Link to this heading">¶</a></h2>
 <p>7 days worth of status files for the Canadian, US, Mexico, and Eurasian feeds. Additionally, upper air station data.
 Percentages are color coded to indicate the status.</p>
-<style>
-    .disclaimer {
-        background: #e9f2ff;
-        padding: 10px 12px;
-        border-left: 4px solid #7ca8e1;
-        border-radius: 5px;
-        margin: 0 0 6px;
-        font-size: 15px;
-        line-height: 1.35;
+<div class="csv-table-responsive can-hly-status-wrapper"><table class="docutils align-center" id="id1">
+<caption><span class="caption-text">Canada Hourly Status - can_hly_status.csv</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>date</p></th>
+<th class="head"><p>records</p></th>
+<th class="head"><p>00</p></th>
+<th class="head"><p>01</p></th>
+<th class="head"><p>02</p></th>
+<th class="head"><p>03</p></th>
+<th class="head"><p>04</p></th>
+<th class="head"><p>05</p></th>
+<th class="head"><p>06</p></th>
+<th class="head"><p>07</p></th>
+<th class="head"><p>08</p></th>
+<th class="head"><p>09</p></th>
+<th class="head"><p>10</p></th>
+<th class="head"><p>11</p></th>
+<th class="head"><p>12</p></th>
+<th class="head"><p>13</p></th>
+<th class="head"><p>14</p></th>
+<th class="head"><p>15</p></th>
+<th class="head"><p>16</p></th>
+<th class="head"><p>17</p></th>
+<th class="head"><p>18</p></th>
+<th class="head"><p>19</p></th>
+<th class="head"><p>20</p></th>
+<th class="head"><p>21</p></th>
+<th class="head"><p>22</p></th>
+<th class="head"><p>23</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>20260811</p></td>
+<td><p>1061</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>82</p></td>
+<td><p>82</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260810</p></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>82</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+</tr>
+<tr class="row-even"><td><p>20260809</p></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>79</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260808</p></td>
+<td></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>79</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>79</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+</tr>
+<tr class="row-even"><td><p>20260807</p></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>79</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>78</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>82</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260806</p></td>
+<td></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>78</p></td>
+<td><p>81</p></td>
+<td><p>79</p></td>
+<td><p>77</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-even"><td><p>20260805</p></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>78</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260804</p></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>78</p></td>
+<td><p>80</p></td>
+<td><p>79</p></td>
+<td><p>78</p></td>
+<td><p>80</p></td>
+<td><p>79</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>81</p></td>
+</tr>
+</tbody>
+</table>
+</div><div class="csv-table-responsive"><table class="docutils align-center" id="id2">
+<caption><span class="caption-text">Canada SYNHD Status - can_syndh_status.csv</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>date</p></th>
+<th class="head"><p>records</p></th>
+<th class="head"><p>00</p></th>
+<th class="head"><p>01</p></th>
+<th class="head"><p>02</p></th>
+<th class="head"><p>03</p></th>
+<th class="head"><p>04</p></th>
+<th class="head"><p>05</p></th>
+<th class="head"><p>06</p></th>
+<th class="head"><p>07</p></th>
+<th class="head"><p>08</p></th>
+<th class="head"><p>09</p></th>
+<th class="head"><p>10</p></th>
+<th class="head"><p>11</p></th>
+<th class="head"><p>12</p></th>
+<th class="head"><p>13</p></th>
+<th class="head"><p>14</p></th>
+<th class="head"><p>15</p></th>
+<th class="head"><p>16</p></th>
+<th class="head"><p>17</p></th>
+<th class="head"><p>18</p></th>
+<th class="head"><p>19</p></th>
+<th class="head"><p>20</p></th>
+<th class="head"><p>21</p></th>
+<th class="head"><p>22</p></th>
+<th class="head"><p>23</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>20260811</p></td>
+<td><p>907</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260810</p></td>
+<td></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+</tr>
+<tr class="row-even"><td><p>20260809</p></td>
+<td></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260808</p></td>
+<td></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+</tr>
+<tr class="row-even"><td><p>20260807</p></td>
+<td></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260806</p></td>
+<td></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+</tr>
+<tr class="row-even"><td><p>20260805</p></td>
+<td></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+</tr>
+<tr class="row-odd"><td><p>20260804</p></td>
+<td></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>77</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>76</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+<td><p>XX</p></td>
+</tr>
+</tbody>
+</table>
+</div><script src="_static/csv-table-helpers.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    makeCsvCellsClickable('.can-hly-status-wrapper', csvCellClassCanadaHourly);
+  });
+</script><style>
+    .csv-table-responsive { width:100%; overflow-x:auto; margin-bottom:1rem; }
+    .csv-table-responsive table { width:100%; border-collapse:collapse; }
+    .csv-table-responsive th, .csv-table-responsive td { padding:0.35rem 0.6rem; }
+    .csv-table-responsive td button {
+        display:inline-block;
+        padding:0.35rem 0.5rem;
+        border:1px solid rgba(0,0,0,0.06);
+        border-radius:4px;
+        background:#fff;
+        color:inherit;
+        text-align:left;
+        cursor:pointer;
+        vertical-align:middle;
     }
+    .csv-table-responsive td .csv-copy-btn {
+        margin-left:6px;
+        padding:0.2rem 0.45rem;
+        font-size:0.85rem;
+        border-radius:4px;
+        background:#f1f5f9;
+        color:#0f172a;
+    }
+    .csv-table-responsive td button.csv-cell-success { background:#d4edda; color:#155724; }
+    .csv-table-responsive td button.csv-cell-warning { background:#fff3cd; color:#856404; }
+    .csv-table-responsive td button.csv-cell-error { background:#f8d7da; color:#721c24; }
+    .csv-table-responsive td button.csv-cell-neutral { background:#e2e3e5; color:#383d41; }
+
+    .csv-path-output { display:block; margin-top:6px; font-family: monospace; font-size:0.85rem; color:#0f172a; word-break:break-all; }
+
+    .disclaimer { background: #e9f2ff; padding: 10px 12px; border-left: 4px solid #7ca8e1; border-radius: 5px; margin: 0 0 6px; font-size: 15px; line-height: 1.35; }
 </style>
 
 <div class="disclaimer">
@@ -85,62 +613,12 @@ Percentages are color coded to indicate the status.</p>
 
 <div class="disclaimer">
       <strong>Green - Running well: >80% for Canada and USA hourlies. Any percentage for Mexico and Eurasia.</strong><br>
-</div><table class="docutils align-center" id="id1">
-<caption><span class="caption-text">Canada Hourly Status</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p>can_hly1.2.4     1061 000102030405060708091011121314151617181920212223</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>20260807          8081798181788180818181818182818181818081808181XX</p></td>
-</tr>
-<tr class="row-odd"><td><p>20260806          818080808178817977818181818180818180818081808180</p></td>
-</tr>
-<tr class="row-even"><td><p>20260805          808180818078808080808080818081818081818180818180</p></td>
-</tr>
-<tr class="row-odd"><td><p>20260804          808078807978807980808081808181818081808080808181</p></td>
-</tr>
-<tr class="row-even"><td><p>20260803          807979787980808080808080808181818081818080818080</p></td>
-</tr>
-<tr class="row-odd"><td><p>20260802          807980818080707080707080818181808080808080798079</p></td>
-</tr>
-<tr class="row-even"><td><p>20260801          808181807880808080808080808181818080808180818181</p></td>
-</tr>
-<tr class="row-odd"><td><p>20260731          818181808080807980818080818081808180818081818180</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-center" id="id2">
-<caption><span class="caption-text">Canada SYNHD Status</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p>can_syndh1.2.4      907 000102030405060708091011121314151617181920212223</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>20260807          76XXXXXXXXXX77XXXXXXXXXX77XXXXXXXXXX76XXXXXXXXXX</p></td>
-</tr>
-<tr class="row-odd"><td><p>20260806          77XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX76XXXXXXXXXX</p></td>
-</tr>
-<tr class="row-even"><td><p>20260805          76XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX</p></td>
-</tr>
-<tr class="row-odd"><td><p>20260804          77XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX76XXXXXXXXXX</p></td>
-</tr>
-<tr class="row-even"><td><p>20260803          75XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX</p></td>
-</tr>
-<tr class="row-odd"><td><p>20260802          77XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX</p></td>
-</tr>
-<tr class="row-even"><td><p>20260801          77XXXXXXXXXX76XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX</p></td>
-</tr>
-<tr class="row-odd"><td><p>20260731          77XXXXXXXXXX76XXXXXXXXXX77XXXXXXXXXX77XXXXXXXXXX</p></td>
-</tr>
-</tbody>
-</table>
-</section>
+</div></section>
 <section id="lightning-feed">
 <h2>Lightning Feed<a class="headerlink" href="#lightning-feed" title="Link to this heading">¶</a></h2>
 <p>Below are the most recent lightning strike times and locations pulled every 15 minutes from the CLDN feed.</p>
 <table class="docutils align-center" id="id3">
-<caption><span class="caption-text">Lightning Data (built at 2026-08-07 18:08:41)</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<caption><span class="caption-text">Lightning Data (built at 2026-08-11 16:56:10)</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
 <colgroup>
 <col style="width: 27.3%" />
 <col style="width: 18.2%" />
@@ -157,155 +635,155 @@ Percentages are color coded to indicate the status.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>2026-08-07 23:33:42</p></td>
-<td><p>41.1155</p></td>
-<td><p>-73.1878</p></td>
-<td><p>-15</p></td>
-<td><p>6</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:42</p></td>
-<td><p>39.2829</p></td>
-<td><p>-84.4627</p></td>
-<td><p>17</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:41</p></td>
-<td><p>41.9608</p></td>
-<td><p>-91.5571</p></td>
+<tr class="row-even"><td><p>2026-08-11 19:39:56</p></td>
+<td><p>38.5627</p></td>
+<td><p>-84.6363</p></td>
 <td><p>-7</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:41</p></td>
-<td><p>39.2149</p></td>
-<td><p>-76.4118</p></td>
-<td><p>-19</p></td>
-<td><p>6</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:41</p></td>
-<td><p>41.3612</p></td>
-<td><p>-73.2762</p></td>
-<td><p>-45</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:41</p></td>
-<td><p>42.4987</p></td>
-<td><p>-89.4653</p></td>
-<td><p>-4</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:41</p></td>
-<td><p>40.569</p></td>
-<td><p>-73.5789</p></td>
-<td><p>-15</p></td>
-<td><p>4</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:40</p></td>
-<td><p>47.5544</p></td>
-<td><p>-88.1921</p></td>
-<td><p>-7</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:40</p></td>
-<td><p>41.2733</p></td>
-<td><p>-73.2527</p></td>
-<td><p>-9</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:39</p></td>
-<td><p>36.7948</p></td>
-<td><p>-79.0696</p></td>
-<td><p>-21</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:39</p></td>
-<td><p>55.7154</p></td>
-<td><p>-121.4029</p></td>
-<td><p>30</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:39</p></td>
-<td><p>55.7668</p></td>
-<td><p>-121.563</p></td>
-<td><p>43</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:39</p></td>
-<td><p>40.5563</p></td>
-<td><p>-85.4804</p></td>
-<td><p>9</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:38</p></td>
-<td><p>40.6395</p></td>
-<td><p>-77.9939</p></td>
-<td><p>-10</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:36</p></td>
-<td><p>41.3312</p></td>
-<td><p>-73.2431</p></td>
-<td><p>-16</p></td>
-<td><p>3</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:36</p></td>
-<td><p>38.8438</p></td>
-<td><p>-81.3326</p></td>
-<td><p>-13</p></td>
 <td><p>5</p></td>
 </tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:36</p></td>
-<td><p>41.6971</p></td>
-<td><p>-92.3526</p></td>
+<tr class="row-odd"><td><p>2026-08-11 19:39:56</p></td>
+<td><p>37.1654</p></td>
+<td><p>-82.6734</p></td>
+<td><p>-25</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-11 19:39:56</p></td>
+<td><p>36.5251</p></td>
+<td><p>-81.8901</p></td>
 <td><p>-11</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-11 19:39:55</p></td>
+<td><p>40.4764</p></td>
+<td><p>-89.0177</p></td>
+<td><p>5</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:35</p></td>
-<td><p>39.2819</p></td>
-<td><p>-81.4137</p></td>
+<tr class="row-even"><td><p>2026-08-11 19:39:55</p></td>
+<td><p>53.435</p></td>
+<td><p>-98.1132</p></td>
+<td><p>-22</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-11 19:39:55</p></td>
+<td><p>39.5565</p></td>
+<td><p>-82.8593</p></td>
+<td><p>-23</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-11 19:39:54</p></td>
+<td><p>41.6352</p></td>
+<td><p>-83.647</p></td>
 <td><p>-6</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:35</p></td>
-<td><p>37.8702</p></td>
-<td><p>-77.2069</p></td>
+<tr class="row-odd"><td><p>2026-08-11 19:39:53</p></td>
+<td><p>39.3739</p></td>
+<td><p>-84.9009</p></td>
 <td><p>-4</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:35</p></td>
-<td><p>41.4315</p></td>
-<td><p>-73.3015</p></td>
+<tr class="row-even"><td><p>2026-08-11 19:39:53</p></td>
+<td><p>39.4183</p></td>
+<td><p>-86.3127</p></td>
 <td><p>-24</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:35</p></td>
-<td><p>35.8224</p></td>
-<td><p>-86.7434</p></td>
-<td><p>-17</p></td>
-<td><p>3</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:32</p></td>
-<td><p>38.9736</p></td>
-<td><p>-81.263</p></td>
-<td><p>-21</p></td>
 <td><p>4</p></td>
 </tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:32</p></td>
-<td><p>47.7123</p></td>
-<td><p>-87.5977</p></td>
-<td><p>15</p></td>
+<tr class="row-odd"><td><p>2026-08-11 19:39:53</p></td>
+<td><p>35.7763</p></td>
+<td><p>-81.9087</p></td>
+<td><p>-23</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p>2026-08-07 23:33:32</p></td>
-<td><p>41.8304</p></td>
-<td><p>-90.8387</p></td>
-<td><p>-23</p></td>
+<tr class="row-even"><td><p>2026-08-11 19:39:52</p></td>
+<td><p>36.4894</p></td>
+<td><p>-82.5614</p></td>
+<td><p>-18</p></td>
 <td><p>2</p></td>
 </tr>
-<tr class="row-even"><td><p>2026-08-07 23:33:32</p></td>
-<td><p>35.1604</p></td>
-<td><p>-87.4392</p></td>
+<tr class="row-odd"><td><p>2026-08-11 19:39:52</p></td>
+<td><p>36.3722</p></td>
+<td><p>-82.1697</p></td>
+<td><p>-15</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-11 19:39:52</p></td>
+<td><p>36.1383</p></td>
+<td><p>-81.2753</p></td>
+<td><p>-20</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-11 19:39:52</p></td>
+<td><p>39.1658</p></td>
+<td><p>-84.8831</p></td>
+<td><p>-13</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-11 19:39:52</p></td>
+<td><p>52.3137</p></td>
+<td><p>-59.2628</p></td>
+<td><p>-15</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-11 19:39:51</p></td>
+<td><p>39.3115</p></td>
+<td><p>-84.1503</p></td>
+<td><p>-16</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-11 19:39:51</p></td>
+<td><p>36.5028</p></td>
+<td><p>-81.8948</p></td>
+<td><p>-8</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-11 19:39:51</p></td>
+<td><p>36.4101</p></td>
+<td><p>-82.1093</p></td>
+<td><p>-26</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-11 19:39:51</p></td>
+<td><p>40.3284</p></td>
+<td><p>-85.8976</p></td>
 <td><p>-25</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-11 19:39:50</p></td>
+<td><p>39.3368</p></td>
+<td><p>-84.159</p></td>
+<td><p>-7</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-11 19:39:49</p></td>
+<td><p>40.327</p></td>
+<td><p>-89.106</p></td>
+<td><p>-35</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-11 19:39:49</p></td>
+<td><p>36.5295</p></td>
+<td><p>-82.6024</p></td>
+<td><p>16</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-11 19:39:48</p></td>
+<td><p>39.2765</p></td>
+<td><p>-84.4201</p></td>
+<td><p>-8</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-08-11 19:39:47</p></td>
+<td><p>39.1637</p></td>
+<td><p>-84.8221</p></td>
 <td><p>5</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-08-11 19:39:47</p></td>
+<td><p>41.7826</p></td>
+<td><p>-83.0631</p></td>
+<td><p>-35</p></td>
+<td><p>9</p></td>
 </tr>
 </tbody>
 </table>
