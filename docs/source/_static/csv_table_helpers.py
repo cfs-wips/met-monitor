@@ -49,7 +49,7 @@ def process_cell(table='can_hly'):
     return path
 
 
-def process_cell_can_hly(date, column, value, mapping):
+def process_cell_can_hly(date, column):
     """Table-specific entry point for Canada Hourly Status."""
     # In browser mode these JSON objects are injected by the JavaScript loader.
     _load_json('dagan_paths.json')

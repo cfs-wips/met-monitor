@@ -1,4 +1,4 @@
-{
+{   
     "status" : "/data/warehouse/process/src/etl_wx/status/",
     "bulletins" : "/data/warehouse/etl/weather/obs/current/",
     

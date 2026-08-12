@@ -167,7 +167,7 @@ async function makeCsvCellsClickable(wrapperSelector, cellClassFn) {
             throw new Error('Python helper function not available');
           }
 
-          const res = pyFunc(dateText, columnName, value, mappingPy);
+          const res = pyFunc(dateText, columnName);
           const out = res.toString();
           console.log('Python output', out);
           outputDiv.textContent = out;
