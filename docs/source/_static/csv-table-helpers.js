@@ -9,6 +9,14 @@ let mappingPy = null;
 let daganPathsPy = null;
 let anikomJsonPy = null;
 
+// Derive the `_static/` base URL from this script's location so fetches
+// work when the site is served from a subpath (e.g., GitHub Pages).
+const _csvStaticBase = (function() {
+  const script = document.currentScript || document.scripts[document.scripts.length - 1];
+  const src = script && script.src ? script.src : window.location.href;
+  return src.replace(/csv-table-helpers\.js$/, '');
+})();
+
 async function loadPyodideAndMapping() {
   if (pyodideReady) return;
   // load pyodide runtime script
@@ -26,7 +34,7 @@ async function loadPyodideAndMapping() {
   window.csvTablePyHelperLoaded = false;
   // load the external Python helper module for per-table functions
   try {
-    const resp = await fetch('_static/csv_table_helpers.py');
+  const resp = await fetch(_csvStaticBase + 'csv_table_helpers.py');
     if (resp.ok) {
       const pyText = await resp.text();
       await pyodide.runPythonAsync(pyText);
@@ -41,7 +49,7 @@ async function loadPyodideAndMapping() {
 
   // fetch mapping JSON from static files
   try {
-    const resp = await fetch('_static/path_map.json');
+  const resp = await fetch(_csvStaticBase + 'path_map.json');
     if (resp.ok) {
       mapping = await resp.json();
       mappingPy = pyodide.toPy(mapping);
@@ -58,7 +66,7 @@ async function loadPyodideAndMapping() {
   }
 
   try {
-    const resp = await fetch('_static/dagan_paths.json');
+  const resp = await fetch(_csvStaticBase + 'dagan_paths.json');
     if (resp.ok) {
       const daganData = await resp.json();
       daganPathsPy = pyodide.toPy(daganData);
@@ -69,7 +77,7 @@ async function loadPyodideAndMapping() {
   }
 
   try {
-    const resp = await fetch('_static/Anikom.json');
+  const resp = await fetch(_csvStaticBase + 'Anikom.json');
     if (resp.ok) {
       const anikomData = await resp.json();
       anikomJsonPy = pyodide.toPy(anikomData);
