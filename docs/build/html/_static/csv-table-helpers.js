@@ -9,13 +9,28 @@ let mappingPy = null;
 let daganPathsPy = null;
 let anikomJsonPy = null;
 
-// Derive the `_static/` base URL from this script's location so fetches
-// work when the site is served from a subpath (e.g., GitHub Pages).
-const _csvStaticBase = (function() {
+// Compute a robust `_static/` base URL from the script's `src` so fetches
+// work when the site is served under a subpath (GitHub Pages) or from
+// a local HTTP server. We resolve relative to the script tag and
+// prefer the enclosing `_static/` directory.
+function computeCsvStaticBase() {
   const script = document.currentScript || document.scripts[document.scripts.length - 1];
   const src = script && script.src ? script.src : window.location.href;
-  return src.replace(/csv-table-helpers\.js$/, '');
-})();
+  try {
+    // `new URL('.', src)` gives the directory containing the script and
+    // always ends with '/'. If the script is already in `_static/`, this
+    // will be the exact folder we need. If not, fall back to appending
+    // `_static/` to that directory.
+    const dir = new URL('.', src).toString();
+    if (dir.endsWith('_static/')) return dir;
+    return new URL('_static/', dir).toString();
+  } catch (e) {
+    // Best-effort fallback to a relative static path
+    return './_static/';
+  }
+}
+
+let _csvStaticBase = null;
 
 async function loadPyodideAndMapping() {
   if (pyodideReady) return;
@@ -32,14 +47,37 @@ async function loadPyodideAndMapping() {
 
   pyodide = await loadPyodide({ indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.23.4/full/' });
   window.csvTablePyHelperLoaded = false;
+  // ensure we have a static base computed
+  try {
+    if (!_csvStaticBase) _csvStaticBase = computeCsvStaticBase();
+  } catch (e) {
+    _csvStaticBase = './_static/';
+  }
+
   // load the external Python helper module for per-table functions
   try {
-  const resp = await fetch(_csvStaticBase + 'csv_table_helpers.py');
+    const helperUrl = new URL('csv_table_helpers.py', _csvStaticBase).toString();
+    const resp = await fetch(helperUrl);
     if (resp.ok) {
       const pyText = await resp.text();
       await pyodide.runPythonAsync(pyText);
       window.csvTablePyHelperLoaded = true;
-      console.log('csv_table_helpers.py loaded in pyodide');
+      console.log('csv_table_helpers.py loaded in pyodide (from)', helperUrl);
+        // Diagnostic: list expected helper names and whether they exist
+        try {
+          const names = ['process_cell', 'process_cell_can_hly', 'process_cell_usa_hly', 'process_cell_mex_hly', 'process_cell_eurasn_hly'];
+          const present = {};
+          for (const n of names) {
+            try {
+              present[n] = !!pyodide.globals.get(n);
+            } catch (e) {
+              present[n] = false;
+            }
+          }
+          console.log('Python helper availability:', present);
+        } catch (diagErr) {
+          console.warn('Diagnostic check failed', diagErr);
+        }
     } else {
       console.warn('Could not fetch csv_table_helpers.py:', resp.status);
     }
@@ -49,7 +87,8 @@ async function loadPyodideAndMapping() {
 
   // fetch mapping JSON from static files
   try {
-  const resp = await fetch(_csvStaticBase + 'path_map.json');
+    const mappingUrl = new URL('path_map.json', _csvStaticBase).toString();
+    const resp = await fetch(mappingUrl);
     if (resp.ok) {
       mapping = await resp.json();
       mappingPy = pyodide.toPy(mapping);
@@ -66,7 +105,8 @@ async function loadPyodideAndMapping() {
   }
 
   try {
-  const resp = await fetch(_csvStaticBase + 'dagan_paths.json');
+    const daganUrl = new URL('dagan_paths.json', _csvStaticBase).toString();
+    const resp = await fetch(daganUrl);
     if (resp.ok) {
       const daganData = await resp.json();
       daganPathsPy = pyodide.toPy(daganData);
@@ -77,7 +117,8 @@ async function loadPyodideAndMapping() {
   }
 
   try {
-  const resp = await fetch(_csvStaticBase + 'Anikom.json');
+    const anikomUrl = new URL('Anikom.json', _csvStaticBase).toString();
+    const resp = await fetch(anikomUrl);
     if (resp.ok) {
       const anikomData = await resp.json();
       anikomJsonPy = pyodide.toPy(anikomData);
@@ -100,6 +141,33 @@ function csvCellClassCanadaHourly(value) {
   return 'csv-cell-error';
 }
 
+function csvCellClassUSAHourly(value) {
+  if (!value) return 'csv-cell-neutral';
+  if (/^XX$/i.test(value)) return 'csv-cell-error';
+  var num = parseInt(value, 10);
+  if (isNaN(num)) return 'csv-cell-neutral';
+  if (num >= 80) return 'csv-cell-success';
+  return 'csv-cell-error';
+}
+
+function csvCellClassMexHourly(value) {
+  if (!value) return 'csv-cell-neutral';
+  if (/^XX$/i.test(value)) return 'csv-cell-error';
+  var num = parseInt(value, 10);
+  if (isNaN(num)) return 'csv-cell-neutral';
+  if (num >= 0) return 'csv-cell-success';
+  return 'csv-cell-error';
+}
+
+function csvCellClassEurasnHourly(value) {
+  if (!value) return 'csv-cell-neutral';
+  if (/^XX$/i.test(value)) return 'csv-cell-error';
+  var num = parseInt(value, 10);
+  if (isNaN(num)) return 'csv-cell-neutral';
+  if (num >= 0) return 'csv-cell-success';
+  return 'csv-cell-error';
+}
+
 function ensureOutputBelowTable(wrapper, table) {
   let outputDiv = wrapper.querySelector('.csv-table-output');
   if (!outputDiv) {
@@ -116,6 +184,38 @@ function ensureOutputBelowTable(wrapper, table) {
     table.insertAdjacentElement('afterend', outputDiv);
   }
   return outputDiv;
+}
+
+function ensureCopyButton(outputDiv) {
+  let btn = outputDiv.querySelector('.csv-copy-btn');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'csv-copy-btn copybtn';
+    btn.textContent = 'Copy';
+    btn.title = 'Copy path to clipboard';
+    btn.style.marginLeft = '0.5rem';
+    btn.style.display = 'inline-block';
+    btn.addEventListener('click', async function() {
+      const text = outputDiv.textContent || '';
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+        }
+      } catch (e) {
+        console.warn('Copy failed', e);
+      }
+    });
+    outputDiv.appendChild(btn);
+  }
+  return btn;
 }
 
 async function makeCsvCellsClickable(wrapperSelector, cellClassFn) {
@@ -160,14 +260,29 @@ async function makeCsvCellsClickable(wrapperSelector, cellClassFn) {
             throw new Error('Pyodide did not initialize');
           }
 
-          let pyFunc = null;
+          // choose preferred python helper based on which cell-class function was passed
+          const preferredPyNames = [];
           try {
-            pyFunc = pyodide.globals.get('process_cell_can_hly');
-          } catch (e) {
+            if (cellClassFn === window.csvCellClassUSAHourly) preferredPyNames.push('process_cell_usa_hly');
+          } catch (e) {}
+          try {
+            if (cellClassFn === window.csvCellClassMexHourly) preferredPyNames.push('process_cell_mex_hly');
+          } catch (e) {}
+          try {
+            if (cellClassFn === window.csvCellClassEurasnHourly) preferredPyNames.push('process_cell_eurasn_hly');
+          } catch (e) {}
+          try {
+            if (cellClassFn === window.csvCellClassCanadaHourly) preferredPyNames.push('process_cell_can_hly');
+          } catch (e) {}
+          preferredPyNames.push('process_cell');
+
+          let pyFunc = null;
+          for (const name of preferredPyNames) {
             try {
-              pyFunc = pyodide.globals.get('process_cell');
-            } catch (ee) {
-              pyFunc = null;
+              pyFunc = pyodide.globals.get(name);
+              if (pyFunc) break;
+            } catch (e) {
+              // not available, try next
             }
           }
 
@@ -179,7 +294,8 @@ async function makeCsvCellsClickable(wrapperSelector, cellClassFn) {
           const out = res.toString();
           console.log('Python output', out);
           outputDiv.textContent = out;
-          if (navigator.clipboard) await navigator.clipboard.writeText(out).catch(()=>{});
+          // Do not auto-copy. Provide a copy button instead.
+          ensureCopyButton(outputDiv);
           res.destroy && res.destroy();
         } catch (err) {
           console.error('Cell processing failed', err);
@@ -198,3 +314,6 @@ async function makeCsvCellsClickable(wrapperSelector, cellClassFn) {
 // export for inline usage
 window.makeCsvCellsClickable = makeCsvCellsClickable;
 window.csvCellClassCanadaHourly = csvCellClassCanadaHourly;
+window.csvCellClassUSAHourly = csvCellClassUSAHourly;
+window.csvCellClassMexHourly = csvCellClassMexHourly;
+window.csvCellClassEurasnHourly = csvCellClassEurasnHourly;

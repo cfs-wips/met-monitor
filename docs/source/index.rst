@@ -9,44 +9,6 @@ Weather Stream Monitoring
 Status Files
 ^^^^^^^^^^^^
 
-7 days worth of status files for the Canadian, US, Mexico, and Eurasian feeds. Additionally, upper air station data. 
-Percentages are color coded to indicate the status. 
-
-.. raw:: html
-
-    <div class="csv-table-responsive can-hly-status-wrapper">
-
-.. csv-table:: Canada Hourly Status - can_hly_status.csv
-   :file: ./_static/can_hly_status.csv
-   :header-rows: 1
-   :align: center
-
-.. raw:: html
-
-    </div>
-
-.. raw:: html
-
-    <div class="csv-table-responsive">
-
-.. csv-table:: Canada SYNHD Status - can_syndh_status.csv
-   :file: ./_static/can_syndh_status.csv
-   :header-rows: 1
-   :align: center
-
-.. raw:: html
-
-    </div>
-
-.. raw:: html
-
-    <script src="_static/csv-table-helpers.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        makeCsvCellsClickable('.can-hly-status-wrapper', csvCellClassCanadaHourly);
-      });
-    </script>
-
 .. raw:: html
 
     <style>
@@ -81,6 +43,36 @@ Percentages are color coded to indicate the status.
 
         .disclaimer { background: #e9f2ff; padding: 10px 12px; border-left: 4px solid #7ca8e1; border-radius: 5px; margin: 0 0 6px; font-size: 15px; line-height: 1.35; }
     </style>
+
+7 days worth of status files for the Canadian, US, Mexico, and Eurasian feeds. Additionally, upper air station data. 
+Percentages are color coded to indicate the status. 
+
+.. raw:: html
+
+    <div class="csv-table-responsive can-hly-status-wrapper">
+
+.. csv-table:: Canada Hourly Status - can_hly_status.csv
+   :file: ./_static/can_hly_status.csv
+   :header-rows: 1
+   :align: center
+
+.. raw:: html
+
+    <!-- end Canada table wrapper -->
+
+.. raw:: html
+
+    <script src="_static/csv-table-helpers.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        makeCsvCellsClickable('.can-hly-status-wrapper', csvCellClassCanadaHourly);
+      });
+    </script>
+
+.. raw:: html
+
+    </div>
+
 
     <div class="disclaimer">
         <strong>Red - Requires re-run: <80% for Canada and USA hourlies. XX for Mexico and Eurasia.</strong><br>
@@ -119,4 +111,15 @@ North American Ensemble Forecast System data.
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   usa_hly
+   mex_hly
+   eurasn_hly
+
+
+Contact
+""""""""
+For questions or feedback please contact Liam Buchart at
+
+- Email: Liam.Buchart@nrcan-rncan.gc.ca
 

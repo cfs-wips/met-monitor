@@ -1,11 +1,17 @@
-{   
+{
     "status" : "/data/warehouse/process/src/etl_wx/status/",
     "bulletins" : "/data/warehouse/etl/weather/obs/current/",
     
     "usa_dirs" : ["saus70", "sauc80"],
     "usa_subdir" : "kwbc",
 
-    "can_dir" : "swob-ml",
-    "can_subdir" : "c***"
+    "can_dirs" : ["swob-ml"],
+    "can_subdir" : "c***",
+
+    "mex_dirs" : "/data/warehouse/process/src/",
+    "mex_subdir" : "etl_wx/etl_fedwx.1.2.4.sh mex1.2.4",
+
+    "eurasn_dirs" : "/data/warehouse/process/src/",
+    "eurasn_subdir" : "etl_wx/etl_fedwx.1.2.4.sh eurasn1.2.4"
 
 }
