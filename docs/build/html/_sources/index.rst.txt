@@ -115,6 +115,7 @@ North American Ensemble Forecast System data.
    usa_hly
    mex_hly
    eurasn_hly
+   syno_recs
 
 
 Contact

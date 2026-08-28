@@ -65,6 +65,9 @@ def process_cell(table, date, column):
         first_dirs = eurasn_dirs if isinstance(eurasn_dirs, list) and len(eurasn_dirs) > 0 else eurasn_dirs
         sub_dir = path_mapping.get('eurasn_subdir')
 
+    elif table == "can_syno":
+        dir = path_mapping.get('can_dirs') or []
+
     listed_dirs = []
     # create a list of of paths if there more than one first directory, otherwise just return a single path
     if table == "can_hly" or table == "usa_hly":
@@ -85,6 +88,9 @@ def process_cell(table, date, column):
                 listed_dirs.append(f"Go run {fd}/{sub_dir}")
         elif first_dirs:
             listed_dirs.append(f"Go run {first_dirs}/{sub_dir} {date}{column} {date}{column} --rr")
+
+    elif table == "can_syno":
+        listed_dirs = dir + "/rerun the synoptic data for this hour if you please.."
 
     else:
         print("error no table specified...")
@@ -134,6 +140,15 @@ def process_cell_eurasn_hly(date, column):
     if isinstance(res, (list, tuple)):
         return '\n'.join(str(x) for x in res)
     return str(res)    
+
+
+def process_cell_syno(date, column):
+    _load_json('dagan_paths.json')
+    
+    res = process_cell(table='can_syno', date=date, column=column)
+    if isinstance(res, (list, tuple)):
+        return '\n'.join(str(x) for x in res)
+    return str(res)
 
 
 def anikom_parser(date, column):

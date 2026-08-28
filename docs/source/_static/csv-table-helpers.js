@@ -168,6 +168,20 @@ function csvCellClassEurasnHourly(value) {
   return 'csv-cell-error';
 }
 
+function csvCellClassSyno(value, columnName) {
+  const normalizedColumn = String(columnName).trim().padStart(2, '0');
+  if (!['00', '06', '12', '18'].includes(normalizedColumn)) {
+    return 'csv-cell-neutral';
+  }
+
+  if (!value) return 'csv-cell-neutral';
+  if (/^XX$/i.test(value)) return 'csv-cell-error';
+  var num = parseInt(value, 10);
+  if (isNaN(num)) return 'csv-cell-neutral';
+  if (num >= 0) return 'csv-cell-success';
+  return 'csv-cell-error';
+}
+
 function ensureOutputBelowTable(wrapper, table) {
   let outputDiv = wrapper.querySelector('.csv-table-output');
   if (!outputDiv) {
@@ -244,7 +258,8 @@ async function makeCsvCellsClickable(wrapperSelector, cellClassFn) {
       const valueBtn = document.createElement('button');
       valueBtn.type = 'button';
       valueBtn.textContent = value;
-      valueBtn.className = cellClassFn(value);
+      const columnName = headers[colIndex] || String(colIndex);
+      valueBtn.className = cellClassFn(value, columnName);
 
       valueBtn.addEventListener('click', async function() {
         // on click, run python helper (if available) to build a path, show it below the table, and copy it
@@ -273,6 +288,8 @@ async function makeCsvCellsClickable(wrapperSelector, cellClassFn) {
           } catch (e) {}
           try {
             if (cellClassFn === window.csvCellClassCanadaHourly) preferredPyNames.push('process_cell_can_hly');
+          } catch (e) {}
+            if (cellClassFn === window.csvCellClassSyno) preferredPyNames.push('process_cell_syno');
           } catch (e) {}
           preferredPyNames.push('process_cell');
 

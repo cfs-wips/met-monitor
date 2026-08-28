@@ -30,7 +30,7 @@ html_static_path = ['_static']
 
 # Show a global table-of-contents in the sidebar so all toctree entries appear
 html_sidebars = {
-    '**': ['globaltoc.html', 'relations.html', 'searchbox.html']
+    '**': ['home.html', 'globaltoc.html', 'relations.html', 'searchbox.html']
 }
 
 # move files to static as needed
