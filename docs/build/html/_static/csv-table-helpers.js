@@ -277,20 +277,11 @@ async function makeCsvCellsClickable(wrapperSelector, cellClassFn) {
 
           // choose preferred python helper based on which cell-class function was passed
           const preferredPyNames = [];
-          try {
-            if (cellClassFn === window.csvCellClassUSAHourly) preferredPyNames.push('process_cell_usa_hly');
-          } catch (e) {}
-          try {
-            if (cellClassFn === window.csvCellClassMexHourly) preferredPyNames.push('process_cell_mex_hly');
-          } catch (e) {}
-          try {
-            if (cellClassFn === window.csvCellClassEurasnHourly) preferredPyNames.push('process_cell_eurasn_hly');
-          } catch (e) {}
-          try {
-            if (cellClassFn === window.csvCellClassCanadaHourly) preferredPyNames.push('process_cell_can_hly');
-          } catch (e) {}
-            if (cellClassFn === window.csvCellClassSyno) preferredPyNames.push('process_cell_syno');
-          } catch (e) {}
+          try { if (cellClassFn === window.csvCellClassUSAHourly) preferredPyNames.push('process_cell_usa_hly'); } catch (e) {}
+          try { if (cellClassFn === window.csvCellClassMexHourly) preferredPyNames.push('process_cell_mex_hly'); } catch (e) {}
+          try { if (cellClassFn === window.csvCellClassEurasnHourly) preferredPyNames.push('process_cell_eurasn_hly'); } catch (e) {}
+          try { if (cellClassFn === window.csvCellClassCanadaHourly) preferredPyNames.push('process_cell_can_hly'); } catch (e) {}
+          try { if (cellClassFn === window.csvCellClassSyno) preferredPyNames.push('process_cell_syno'); } catch (e) {}
           preferredPyNames.push('process_cell');
 
           let pyFunc = null;
