@@ -86,16 +86,6 @@ Percentages are color coded to indicate the status.
           <strong>Green - Running well: >80% for Canada and USA hourlies. Any percentage for Mexico and Eurasia.</strong><br>
     </div>
 
-Lightning Feed
-^^^^^^^^^^^^^^
-
-Below are the most recent lightning strike times and locations pulled every 15 minutes from the CLDN feed.
-
-.. csv-table:: Lightning Data (built at |lightning_time|)
-   :file: ./_static/lightning_data.csv
-   :header: "Datetime", "Lat", "Lon", "Peak Current", "Multi Flash"
-   :widths: 15, 10, 10, 10, 10
-   :align: center
 
 Scribe
 ^^^^^^
@@ -112,6 +102,7 @@ North American Ensemble Forecast System data.
    :maxdepth: 2
    :caption: Contents:
 
+   lightning_check
    usa_hly
    mex_hly
    eurasn_hly
