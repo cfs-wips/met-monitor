@@ -36,7 +36,7 @@ html_sidebars = {
 # move files to static as needed
 import os
 import shutil
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 import pandas as pd
 from dateutil.relativedelta import relativedelta
@@ -49,7 +49,7 @@ temp_dir = project_root / "SCRIPTS" / "temp"
 print(f"Temp directory: {temp_dir}")
 
 # add a timestamp substitution for the Lightning Data title
-lightning_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+lightning_time = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
 # stupid stuff because I am lazy hehe
 lightning_dt = datetime.strptime(lightning_time, '%Y-%m-%d %H:%M:%S')
 # collect epilog substitution lines and set `rst_epilog` once at the end
@@ -87,12 +87,15 @@ db_lightning_time = datetime.strptime(mrlt, '%Y-%m-%d %H:%M:%S')
 #delta = lightning_time - db_lightning_time
 
 # Human-readable difference
+print(lightning_dt, db_lightning_time)
 rdelta = relativedelta(lightning_dt, db_lightning_time)
 delta_str = f"{rdelta.days} days, {rdelta.hours} hours"
 
 # make it accessible
 epilog_lines.append(f".. |lightning_difference| replace:: {delta_str}")
 
+print(f"Checking the the hours!: {rdelta.hours}")
+print(f"Checking the the days!: {rdelta.days}")
 # now some simple logic to save a font color based on the magnitude of delta
 if rdelta.hours <= 2:
     # lightning data working well
@@ -110,8 +113,15 @@ else:
 # make it accessible
 epilog_lines.append(f".. |text| replace:: {text}")
 
-# make it accessible
-epilog_lines.append(f".. |text_color| replace:: {color}")
+# map semantic color names to CSS-safe background colors and expose that
+color_map = {
+    "Green": "#d4f4dd",
+    "Orange": "#ffecd1",
+    "Red": "#ffd6d6",
+}
+css_color = color_map.get(color, color)
+epilog_lines.append(f".. |text_color| replace:: {css_color}")
 
 # finalize the combined rst_epilog so all substitutions are available
 rst_epilog = "\n".join(epilog_lines)
+print(f"Final rst_epilog: {rst_epilog}")

@@ -1,8 +1,5 @@
-.. raw:: html
-
-    <style>
-            .disclaimer { background: |text_color|; padding: 10px 12px; border-left: 4px solid black; border-radius: 5px; margin: 0 0 6px; font-size: 15px; line-height: 1.35; }
-    </style>
+.. NOTE:: The disclaimer now uses an inline `style` attribute so
+   `|text_color|` is applied per-instance.
 
 Lightning Feed
 ^^^^^^^^^^^^^^
@@ -16,12 +13,7 @@ Below are the most recent lightning strike times and locations pulled every 15 m
 
     </div>
 
-    <div class="disclaimer">
-        <strong>Time since last strike in DB: |lightning_time|</strong><br>
-    </div>
-
-
-    <div class="disclaimer">
+    <div class="disclaimer" style="background: |text_color|; padding: 10px 12px; border-left: 4px solid black; border-radius: 5px; margin: 0 0 6px; font-size: 15px; line-height: 1.35;">
         <strong>|text|</strong><br>
     </div>
 
