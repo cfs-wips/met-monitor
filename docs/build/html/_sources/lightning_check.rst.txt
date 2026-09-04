@@ -1,27 +1,27 @@
-.. NOTE:: The disclaimer now uses an inline `style` attribute so
-   `|text_color|` is applied per-instance.
-
 Lightning Feed
 ^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <style>
+        .disclaimer { padding: 10px 12px; border-left: 4px solid #000000; border-radius: 5px; margin: 0 0 6px; font-size: 15px; line-height: 1.35; }
+    </style>
 
 Lightning data are pulled from the CLDN feed every 15 minutes. 
 However, the timing scripts is only run once per hours. 
 
-Below are the most recent lightning strike times and locations pulled every 15 minutes from the CLDN feed.
+The colored bar shows the time since the most recent lightning strike pulled. Coloring denotes potential action. Green - Lightning functioning well. Orange - potential problems with the lightning feed. Red - Need to restart the lightning feed and start a backfill.
 
-.. raw:: html
+Below that are the most recent lightning strike times and locations pulled every 15 minutes from the CLDN feed.
 
-    </div>
+.. container:: lightning-status disclaimer
 
-    <div class="disclaimer" style="background: |text_color|; padding: 10px 12px; border-left: 4px solid black; border-radius: 5px; margin: 0 0 6px; font-size: 15px; line-height: 1.35;">
-        <strong>|text|</strong><br>
-    </div>
+    |lightning_text|
 
-.. csv-table:: Lightning Data (table built at |lightning_time|)
+.. csv-table:: Lightning Data (table built at |lightning_time| |lightning_difference|)
    :file: ./_static/lightning_data.csv
    :header: "Datetime", "Lat", "Lon", "Peak Current", "Multi Flash"
    :widths: 15, 10, 10, 10, 10
    :align: center
 
-.. Now get the time difference between the Datetime column (index 0) and lightning time
 

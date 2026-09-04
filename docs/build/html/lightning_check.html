@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="_static/cloud.css?v=f9ae72be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/lightning_status.css?v=d88f1cd0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
     
     <script src="_static/documentation_options.js?v=2709fde1"></script>
@@ -70,22 +71,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The disclaimer now uses an inline <cite>style</cite> attribute so
-<cite>|text_color|</cite> is applied per-instance.</p>
-</div>
-<section id="lightning-feed">
+  <section id="lightning-feed">
 <h1>Lightning Feed<a class="headerlink" href="#lightning-feed" title="Link to this heading">¶</a></h1>
-<p>Lightning data are pulled from the CLDN feed every 15 minutes.
+<style>
+    .disclaimer { padding: 10px 12px; border-left: 4px solid #000000; border-radius: 5px; margin: 0 0 6px; font-size: 15px; line-height: 1.35; }
+</style><p>Lightning data are pulled from the CLDN feed every 15 minutes.
 However, the timing scripts is only run once per hours.</p>
-<p>Below are the most recent lightning strike times and locations pulled every 15 minutes from the CLDN feed.</p>
+<p>The colored bar shows the time since the most recent lightning strike pulled. Coloring denotes potential action. Green - Lightning functioning well. Orange - potential problems with the lightning feed. Red - Need to restart the lightning feed and start a backfill.</p>
+<p>Below that are the most recent lightning strike times and locations pulled every 15 minutes from the CLDN feed.</p>
+<div class="lightning-status disclaimer docutils container">
+<p><strong>Lightning data is up to date. Last update was 0 days, 0 hours, 52 minutes ago.</strong></p>
 </div>
-
-<div class="disclaimer" style="background: |text_color|; padding: 10px 12px; border-left: 4px solid black; border-radius: 5px; margin: 0 0 6px; font-size: 15px; line-height: 1.35;">
-    <strong>|text|</strong><br>
-</div><table class="docutils align-center" id="id1">
-<caption><span class="caption-text">Lightning Data (table built at 2026-09-03 22:19:51)</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-text">Lightning Data (table built at 2026-09-04 16:38:14 0 days, 0 hours, 52 minutes)</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
 <colgroup>
 <col style="width: 27.3%" />
 <col style="width: 18.2%" />
@@ -102,155 +100,155 @@ However, the timing scripts is only run once per hours.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>2026-09-03 21:58:04</p></td>
-<td><p>40.8834</p></td>
-<td><p>-79.5275</p></td>
-<td><p>9</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:58:04</p></td>
-<td><p>47.2069</p></td>
-<td><p>-95.0992</p></td>
-<td><p>-13</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:58:03</p></td>
-<td><p>40.2313</p></td>
-<td><p>-80.2446</p></td>
-<td><p>29</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:58:03</p></td>
-<td><p>41.7666</p></td>
-<td><p>-81.546</p></td>
-<td><p>5</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:58:03</p></td>
-<td><p>40.633</p></td>
-<td><p>-80.0016</p></td>
-<td><p>-23</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:58:02</p></td>
-<td><p>42.0276</p></td>
-<td><p>-80.7294</p></td>
-<td><p>-17</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:58:01</p></td>
-<td><p>38.4362</p></td>
-<td><p>-67.6015</p></td>
-<td><p>-13</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:58:01</p></td>
-<td><p>42.1476</p></td>
-<td><p>-82.4877</p></td>
-<td><p>-18</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:58:00</p></td>
-<td><p>41.1547</p></td>
-<td><p>-83.5965</p></td>
-<td><p>-9</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:58:00</p></td>
-<td><p>40.4394</p></td>
-<td><p>-80.5136</p></td>
-<td><p>-20</p></td>
-<td><p>7</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:58:00</p></td>
-<td><p>41.6977</p></td>
-<td><p>-78.8956</p></td>
-<td><p>-8</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:58:00</p></td>
-<td><p>41.0033</p></td>
-<td><p>-81.1565</p></td>
-<td><p>-15</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:58:00</p></td>
-<td><p>47.2104</p></td>
-<td><p>-95.1294</p></td>
-<td><p>56</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:58:00</p></td>
-<td><p>40.7562</p></td>
-<td><p>-79.7101</p></td>
-<td><p>7</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:58:00</p></td>
-<td><p>41.5189</p></td>
-<td><p>-80.1969</p></td>
-<td><p>-165</p></td>
-<td><p>4</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:58:00</p></td>
-<td><p>48.4455</p></td>
-<td><p>-94.348</p></td>
-<td><p>-7</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:57:59</p></td>
-<td><p>40.2588</p></td>
-<td><p>-80.3654</p></td>
-<td><p>-21</p></td>
-<td><p>4</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:57:58</p></td>
-<td><p>54.3151</p></td>
-<td><p>-114.461</p></td>
-<td><p>-22</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:57:58</p></td>
-<td><p>40.8101</p></td>
-<td><p>-80.0131</p></td>
-<td><p>-7</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:57:57</p></td>
-<td><p>47.5637</p></td>
-<td><p>-95.1209</p></td>
-<td><p>12</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>2026-09-03 21:57:57</p></td>
-<td><p>40.6252</p></td>
-<td><p>-80.0692</p></td>
-<td><p>-26</p></td>
-<td><p>8</p></td>
-</tr>
-<tr class="row-odd"><td><p>2026-09-03 21:57:56</p></td>
-<td><p>40.2926</p></td>
-<td><p>-80.319</p></td>
-<td><p>-21</p></td>
+<tr class="row-even"><td><p>2026-09-04 15:46:18</p></td>
+<td><p>42.9025</p></td>
+<td><p>-87.8221</p></td>
+<td><p>-31</p></td>
 <td><p>3</p></td>
 </tr>
-<tr class="row-even"><td><p>2026-09-03 21:57:56</p></td>
-<td><p>40.5793</p></td>
-<td><p>-79.9939</p></td>
+<tr class="row-odd"><td><p>2026-09-04 15:46:14</p></td>
+<td><p>37.8113</p></td>
+<td><p>-68.7035</p></td>
+<td><p>-21</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:46:08</p></td>
+<td><p>37.7105</p></td>
+<td><p>-65.9998</p></td>
+<td><p>39</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:46:06</p></td>
+<td><p>38.0274</p></td>
+<td><p>-66.358</p></td>
+<td><p>-55</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:46:06</p></td>
+<td><p>40.0912</p></td>
+<td><p>-83.5407</p></td>
+<td><p>26</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:46:05</p></td>
+<td><p>38.1018</p></td>
+<td><p>-66.5785</p></td>
+<td><p>-35</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:46:05</p></td>
+<td><p>42.5618</p></td>
+<td><p>-86.0901</p></td>
+<td><p>-23</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:46:02</p></td>
+<td><p>38.708</p></td>
+<td><p>-66.6391</p></td>
 <td><p>23</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p>2026-09-03 21:57:55</p></td>
-<td><p>40.3524</p></td>
-<td><p>-80.2031</p></td>
-<td><p>-6</p></td>
+<tr class="row-even"><td><p>2026-09-04 15:46:02</p></td>
+<td><p>38.6781</p></td>
+<td><p>-66.5157</p></td>
+<td><p>33</p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p>2026-09-03 21:57:54</p></td>
-<td><p>40.7142</p></td>
-<td><p>-79.9226</p></td>
-<td><p>7</p></td>
+<tr class="row-odd"><td><p>2026-09-04 15:45:56</p></td>
+<td><p>42.5355</p></td>
+<td><p>-87.2001</p></td>
+<td><p>-66</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:45:56</p></td>
+<td><p>37.7655</p></td>
+<td><p>-68.6685</p></td>
+<td><p>-25</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:45:51</p></td>
+<td><p>41.8089</p></td>
+<td><p>-61.751</p></td>
+<td><p>33</p></td>
 <td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:45:46</p></td>
+<td><p>42.7976</p></td>
+<td><p>-88.4341</p></td>
+<td><p>-158</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:45:45</p></td>
+<td><p>43.2229</p></td>
+<td><p>-101.252</p></td>
+<td><p>-17</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:45:41</p></td>
+<td><p>42.3911</p></td>
+<td><p>-87.515</p></td>
+<td><p>-63</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:45:39</p></td>
+<td><p>36.7013</p></td>
+<td><p>-67.3479</p></td>
+<td><p>-47</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:45:37</p></td>
+<td><p>43.1385</p></td>
+<td><p>-88.2363</p></td>
+<td><p>38</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:45:36</p></td>
+<td><p>38.0209</p></td>
+<td><p>-65.4879</p></td>
+<td><p>39</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:45:35</p></td>
+<td><p>43.4451</p></td>
+<td><p>-90.0309</p></td>
+<td><p>-23</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:45:33</p></td>
+<td><p>35.8087</p></td>
+<td><p>-67.9967</p></td>
+<td><p>-44</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:45:31</p></td>
+<td><p>39.6835</p></td>
+<td><p>-82.3807</p></td>
+<td><p>45</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:45:25</p></td>
+<td><p>37.9065</p></td>
+<td><p>-65.4065</p></td>
+<td><p>-30</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:45:25</p></td>
+<td><p>40.1731</p></td>
+<td><p>-82.3107</p></td>
+<td><p>34</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2026-09-04 15:45:22</p></td>
+<td><p>43.0067</p></td>
+<td><p>-90.7889</p></td>
+<td><p>-32</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2026-09-04 15:45:20</p></td>
+<td><p>42.8728</p></td>
+<td><p>-87.9513</p></td>
+<td><p>-17</p></td>
+<td><p>2</p></td>
 </tr>
 </tbody>
 </table>

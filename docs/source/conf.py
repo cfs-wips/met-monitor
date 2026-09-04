@@ -27,6 +27,7 @@ exclude_patterns = []
 
 html_theme = 'cloud'
 html_static_path = ['_static']
+html_css_files = ['lightning_status.css']
 
 # Show a global table-of-contents in the sidebar so all toctree entries appear
 html_sidebars = {
@@ -83,13 +84,10 @@ mrlt = lf.iloc[0, 0]
 # convert to a datetime
 db_lightning_time = datetime.strptime(mrlt, '%Y-%m-%d %H:%M:%S')
 
-# get the difference 
-#delta = lightning_time - db_lightning_time
-
 # Human-readable difference
 print(lightning_dt, db_lightning_time)
 rdelta = relativedelta(lightning_dt, db_lightning_time)
-delta_str = f"{rdelta.days} days, {rdelta.hours} hours"
+delta_str = f"{rdelta.days} days, {rdelta.hours} hours, {rdelta.minutes} minutes"
 
 # make it accessible
 epilog_lines.append(f".. |lightning_difference| replace:: {delta_str}")
@@ -111,17 +109,23 @@ else:
     text = f"Lightning data is likely out. Last update was {delta_str} ago. Commence restart."
 
 # make it accessible
-epilog_lines.append(f".. |text| replace:: {text}")
-
 # map semantic color names to CSS-safe background colors and expose that
 color_map = {
-    "Green": "#d4f4dd",
-    "Orange": "#ffecd1",
-    "Red": "#ffd6d6",
+    "Green": "#2aaa4e",
+    "Orange": "#ba7719",
+    "Red": "#c71616",
 }
 css_color = color_map.get(color, color)
 epilog_lines.append(f".. |text_color| replace:: {css_color}")
+epilog_lines.append(f".. |lightning_text| replace:: **{text}**")
+rst_epilog = "\n\n".join(epilog_lines) + "\n"
 
-# finalize the combined rst_epilog so all substitutions are available
-rst_epilog = "\n".join(epilog_lines)
+# Raw HTML does not expand RST substitutions, so expose the computed color
+# through a generated stylesheet and apply it with a normal RST container.
+status_css = Path(static_dir) / "lightning_status.css"
+status_css.write_text(
+    f".lightning-status {{ background: {css_color}; }}\n",
+    encoding="utf-8",
+)
+
 print(f"Final rst_epilog: {rst_epilog}")
